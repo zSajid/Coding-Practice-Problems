@@ -3,25 +3,43 @@ using namespace std;
 
 int main()
 	{
-	int arr[] = {1, 5, 1, 4, 5, 9 ,20};
-	int size = 7, newSize = 0;
+	int arr[] = {1,1,2,3,4,20,40,34, 21,35,35};
+	int size = 11, newSize = 0;
 
 	for(int i = 0; i < size -1 ; i++)
 		{
 		cout << arr[i] << " " ;
 		}
-	for(int i = 0; i< size -1 ; i++)
+	cout << endl;
+	
+	for(int i = 0; i < size -1; i++, newSize++)
 		{
-			if(arr[i] == arr[i+1])
+			for(int j = i+1; j < size -1; j++)
+			{
+				if(arr[i] == arr[j])
 				{
-					
+					cout << "Moving " << arr[j] << " and " << arr[j+1] << endl;
+
+					int temp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
 				}
+			}
 		}
 
-	for(int i = 0; i < size -1 ; i++)
+	cout << endl;
+
+	// Issues where if the number of integers is less than 7, it does not print out the new array values accurately.
+	if(size >7)
+		{
+			newSize -= 1;
+		}
+
+	for(int i = 0; i < newSize ; i++)
 		{
 		cout << arr[i] << " " ;
 		}
 
+	cout << endl;
 	return 0;
 	}
