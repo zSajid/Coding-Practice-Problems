@@ -12,6 +12,8 @@ int main()
 		}
 	cout << endl;
 	
+	// Loop through the array, comparing arr[i] to every other value, and if those values are similar, then loop
+	// from that specific value and move the value adjacent to it
 	for(int i = 0; i < size -1; i++, newSize++)
 		{
 			for(int j = i+1; j < size -1; j++)
